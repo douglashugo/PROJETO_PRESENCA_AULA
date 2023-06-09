@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Presenças</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            background-color: #ffffff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Presenças no Evento</h1>
+    <ul>
+        {% for presenca in presencas %}
+            <li>
+                <strong>Aluno:</strong> {{ presenca.nome_aluno }}<br>
+                <strong>Professor:</strong> {{ presenca.nome_professor.nome }}
+            </li>
+        {% empty %}
+            <li>Nenhum aluno cadastrado.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
